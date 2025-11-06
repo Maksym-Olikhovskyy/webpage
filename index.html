@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Página en construcción</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #0f172a; /* azul oscuro */
+      --bg2: #0b1220; /* casi negro */
+      --accent: #ffb020; /* amarillo construcción */
+      --muted: rgba(255,255,255,0.65);
+      --glass: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(255,176,32,0.06), transparent), linear-gradient(180deg,var(--bg1),var(--bg2));
+      color: #fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+    .card{
+      width:100%;
+      max-width:920px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:16px;
+      padding:40px;
+      box-shadow: 0 8px 40px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:32px;
+      align-items:center;
+    }
+    .left h1{
+      margin:0 0 8px 0;
+      font-size:clamp(28px,4vw,40px);
+      letter-spacing:-0.02em;
+      font-weight:800;
+    }
+    .left p{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      line-height:1.5;
+    }
+    .progress{
+      height:12px;
+      background:var(--glass);
+      border-radius:999px;
+      overflow:hidden;
+      width:80%;
+    }
+    .bar{
+      height:100%;
+      width:62%;
+      background: linear-gradient(90deg, var(--accent), #ffda7a);
+      box-shadow:0 4px 18px rgba(255,176,32,0.18);
+      border-radius:999px;
+      transform-origin:left center;
+      animation: pulse 2.6s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%{transform:scaleX(0.98)}
+      50%{transform:scaleX(1.03)}
+      100%{transform:scaleX(0.98)}
+    }
+    .meta{display:flex;gap:12px;align-items:center;margin-top:18px}
+    .chip{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--muted);font-size:14px}
+
+    /* Ilustración */
+    .tower{
+      display:flex;align-items:center;justify-content:center;
+    }
+    svg{max-width:100%;height:auto;display:block}
+    .small{font-size:13px;color:var(--muted);margin-top:14px}
+
+    /* responsive */
+    @media (max-width:880px){
+      .card{grid-template-columns:1fr; padding:28px}
+      .tower{order:-1;margin-bottom:8px}
+    }
+
+    .btn{
+      display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(180deg,#ffffff06,#ffffff03);border:1px solid rgba(255,255,255,0.04);color:#fff;text-decoration:none;font-weight:600;margin-top:16px}
+    .footer{margin-top:18px;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="titulo">
+    <section class="left">
+      <h1 id="titulo">Página en construcción</h1>
+      <p>Estamos trabajando en esta sección. Volverá pronto con mejoras y contenido nuevo. Gracias por tu paciencia.</p>
+
+      <div class="progress" aria-hidden="true">
+        <div class="bar" style="width:10%"></div>
+      </div>
+
+      <div class="meta">
+        <div class="chip">Progreso: 1%</div>
+        <div class="chip">Última actualización: 6/11/2025</div>
+      </div>
+
+      <!--<a class="btn" href="#">Volver al inicio</a>
+
+       <div class="footer">¿Necesitas ayuda? <a href="mailto:soporte@tudominio.com" style="color:var(--accent);text-decoration:none">soporte@tudominio.com</a></div> -->
+    </section>
+
+    <aside class="tower" aria-hidden="true">
+      <!-- Ilustración SVG simple y estilizada -->
+      <svg width="360" height="320" viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Icono de construcción">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0" stop-color="#ffb020" stop-opacity="1"/>
+            <stop offset="1" stop-color="#ffd88a" stop-opacity="1"/>
+          </linearGradient>
+        </defs>
+        <rect x="24" y="40" width="160" height="220" rx="10" fill="#0c1430" opacity="0.6" />
+        <rect x="32" y="52" width="144" height="196" rx="8" fill="url(#g1)" opacity="0.12" />
+
+        <!-- Grúa estilizada -->
+        <g transform="translate(210,30)">
+          <rect x="0" y="70" width="16" height="150" rx="4" fill="#111827"/>
+          <rect x="-40" y="62" width="200" height="12" rx="6" fill="#0b1220"/>
+          <rect x="-12" y="50" width="28" height="28" rx="6" fill="#ffb020" />
+          <rect x="120" y="40" width="24" height="12" rx="6" fill="#ffb020"/>
+
+          <g transform="translate(34,84)" style="transform-origin:34px 84px; animation: swing 3s ease-in-out infinite;">
+            <line x1="0" y1="0" x2="60" y2="40" stroke="#ffd88a" stroke-width="6" stroke-linecap="round" />
+            <rect x="54" y="36" width="42" height="28" rx="6" fill="#111827" stroke="#ffb020" stroke-width="3"/>
+            <text x="70" y="54" fill="#ffb020" font-size="10" font-weight="700" text-anchor="middle">PDF</text>
+          </g>
+        </g>
+
+        <!-- Tornillo/Engranaje -->
+        <g transform="translate(60,200) scale(1.1)">
+          <circle cx="0" cy="0" r="34" fill="#081226" stroke="#ffb020" stroke-width="6"/>
+          <g transform="rotate(0)">
+            <path d="M-4-34 L4-34 L10-20 L22-14 L18-2 L28 6 L22 20 L10 24 L4 36 L-4 36 L-10 24 L-22 20 L-28 6 L-18-2 L-22-14 L-10-20 Z" fill="#ffb020" opacity="0.16"/>
+          </g>
+        </g>
+
+        <style>
+          @keyframes swing{
+            0%{transform:translate(34px,84px) rotate(-6deg)}
+            50%{transform:translate(34px,84px) rotate(6deg)}
+            100%{transform:translate(34px,84px) rotate(-6deg)}
+          }
+        </style>
+      </svg>
+    </aside>
+  </main>
+</body>
+</html>
